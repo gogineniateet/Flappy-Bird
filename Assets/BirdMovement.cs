@@ -7,6 +7,7 @@ public class BirdMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     public float birdSpeed;
+    public int maxAngle, minAngle, angle;
 
     private void Awake()
     {
@@ -29,9 +30,30 @@ public class BirdMovement : MonoBehaviour
         {
             // bird movement will start after left click mouse button
             BirdFlapAndJump();
+
         }
 
+        BirdRotation();
+    }
 
+    private void BirdRotation()
+    {
+        if (rb.velocity.y > 0)
+        {
+            if (angle <= maxAngle)
+            {
+                angle = angle + 4;
+            }
+
+        }
+        else if (rb.velocity.y < 0)
+        {
+            if (angle >= minAngle)
+            {
+                angle = angle - 4;
+            }
+        }
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void BirdFlapAndJump()

@@ -570,7 +570,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba795ab18a52ae147b9240922724f33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSpeed: 5
+  birdSpeed: 2
+  maxAngle: 20
+  minAngle: -90
+  angle: 0
 --- !u!70 &1216125220
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
