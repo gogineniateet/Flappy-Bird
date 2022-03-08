@@ -8,11 +8,11 @@ public class BirdMovement : MonoBehaviour
     Rigidbody2D rb;
     public float birdSpeed;
     public int maxAngle, minAngle, angle;
+    ScoreManager scoreManager;
 
     private void Awake()
     {
         gameObject.AddComponent<Rigidbody2D>();
-
     }
 
     // Start is called before the first frame update
@@ -20,19 +20,17 @@ public class BirdMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
             // bird movement will start after left click mouse button
             BirdFlapAndJump();
-
         }
-
         BirdRotation();
     }
 
@@ -44,7 +42,6 @@ public class BirdMovement : MonoBehaviour
             {
                 angle = angle + 4;
             }
-
         }
         else if (rb.velocity.y < 0)
         {
@@ -61,6 +58,15 @@ public class BirdMovement : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.velocity = new Vector2(rb.velocity.x, birdSpeed);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pipe")
+        {
+            scoreManager.ScoreUpdate(10);
+        }
+    }
+
 }
 
 

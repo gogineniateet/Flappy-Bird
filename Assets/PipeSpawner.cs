@@ -15,11 +15,6 @@ public class PipeSpawner : MonoBehaviour
         InvokeRepeating("PipeSpawnner", 2f, 2f);
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void PipeSpawnner()
     {
         GameObject newPipe = Instantiate(pipePrefab);
