@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     public void ScoreUpdate(int scoreValue)
     {
         score = score + scoreValue;
-        Debug.Log("Score : " + score);
+        //Debug.Log("Score : " + score);
         scoreText.text = score.ToString();
 
     }

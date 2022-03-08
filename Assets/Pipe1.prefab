@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4020530212997213298}
   m_Layer: 0
   m_Name: LowerPipe
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 3883233514800364464}
   m_Layer: 0
   m_Name: Pipe1
-  m_TagString: Pipe
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  score: 0
 --- !u!61 &3883233514800364464
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +186,7 @@ GameObject:
   - component: {fileID: 6313344887398955189}
   m_Layer: 0
   m_Name: UpperPipe
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
